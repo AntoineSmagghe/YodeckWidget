@@ -13,16 +13,15 @@ class MovingText
     {
         this.doctorText[this.index].style.display = "block";
         this.doctorText[this.index].style.animation = this.animation + " " + this.animationTime + " ease";
-        setTimeout(()=>{
-            this.time();
-        }, this.timeout);
+        this.time();
     }
 
     time()
     {
         setInterval(()=>{
             this.doctorText[this.index].style.display = "none";
-            
+            this.doctorText[this.index].style.animation = "";
+
             if (this.index < (this.doctorText.length - 1)){
                 this.index += 1;
             } else {
