@@ -10,17 +10,30 @@ class MovingText
     show()
     {
         this.doctorText[this.index].style.display = "block";
+        setTimeout(()=>{
+            this.time();
+        }, this.timeout);
     }
 
     time()
     {
-        setTimeout({
+        setInterval(()=>{
+            this.doctorText[this.index].style.display = "none";
             
-        },this.timeout)
+            if (this.index < (this.doctorText.length - 1)){
+                this.index += 1;
+            } else {
+                this.index = 0;
+            }
+
+            console.log(this.index);
+
+            this.doctorText[this.index].style.display = "block";
+        }, this.timeout);
     }
 
     init()
     {
-
+        this.show();
     }
 }
