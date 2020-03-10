@@ -3,3 +3,13 @@
     text-align: center;
     display: none;
 }
+
+@keyframes blurAppear{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}

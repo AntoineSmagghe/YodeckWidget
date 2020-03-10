@@ -1,8 +1,10 @@
 class MovingText
 {
-    constructor(doctorText, timeout)
+    constructor(doctorText, animation, animationTime, timeout)
     {
         this.doctorText = doctorText;
+        this.animation = animation;
+        this.animationTime = animationTime;
         this.timeout = timeout;
         this.index = 0;
     }
@@ -10,6 +12,7 @@ class MovingText
     show()
     {
         this.doctorText[this.index].style.display = "block";
+        this.doctorText[this.index].style.animation = this.animation + " " + this.animationTime + " ease";
         setTimeout(()=>{
             this.time();
         }, this.timeout);
@@ -26,9 +29,8 @@ class MovingText
                 this.index = 0;
             }
 
-            console.log(this.index);
-
             this.doctorText[this.index].style.display = "block";
+            this.doctorText[this.index].style.animation = this.animation + " " + this.animationTime + " ease";
         }, this.timeout);
     }
 
